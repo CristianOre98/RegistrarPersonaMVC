@@ -8,6 +8,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Registro de usuarios</h1>
+        <form action="recibir.do" method="post">
+            DUI:<input type="text" name="txtDui" value="" /> 
+            <br>
+            Apellidos:<input type="text" name="txtApellidos" value="" />
+            <br>
+            Nombres:<input type="text" name="txtNombres" value="" /> 
+            <br>
+            <input type="Submit" value="Registrar Nueva Persona" />
+        </form>
     </body>
 </html>
+
