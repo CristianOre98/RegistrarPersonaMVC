@@ -1,8 +1,5 @@
-<%-- 
-    Document   : mostrartodo
-    Created on : 05-28-2020, 06:58:48 PM
-    Author     : Josue
---%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +9,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Todos los registros</h1>
+        <c:forEach var="listaTotal" items="${sessionScope.personas}">
+            DUI:${listaTotal.dui}<br>
+            Apellidos:${listaTotal.apellido}<br>
+            Nombre:${listaTotal.nombres}<br>
+            
+    </c:forEach>
+        
     </body>
 </html>

@@ -18,7 +18,7 @@ public class Persona {
     public Persona() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_recurso_humano?zeroDateTimeBehavior=convertToNull", "root", "");
+            cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_recurso_humano?zeroDateTimeBehavior=convertToNull", "root", "");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -99,7 +99,7 @@ public class Persona {
             result = state.executeQuery(miQuery);//Ejecutar la consulta
             while(result.next()){//Recorre todo el resutSet y almacena en cada fila los registros encontrados
                                                        //El nombre de ser asi como esta en la tabla de la base de datos
-                person.add(new Persona(result.getString("dui_persona"), result.getString("apellido_persona"), result.getString("nombres_persona")));   
+                person.add(new Persona(result.getString("dui_persona"), result.getString("apellidos_persona"), result.getString("nombre_persona")));   
             }  
         } catch (SQLException ex) {
             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
