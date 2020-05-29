@@ -3,6 +3,7 @@ package modelo;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.ArrayList; //Importar la clase Array
 
 public class Persona {
     private String dui;
@@ -88,6 +89,22 @@ public class Persona {
             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
         }     
     return false;
+    }
+    
+    public ArrayList<Persona> consultarRegistros(){
+        ArrayList<Persona> person = new ArrayList(); //Crear el array de almacenamiento tipo Persona
+        try {
+            String miQuery = "select * from tb_persona;"; //Definir la consulta
+            state = cnn.createStatement();//Crear el "boton" para la consulta
+            result = state.executeQuery(miQuery);//Ejecutar la consulta
+            while(result.next()){//Recorre todo el resutSet y almacena en cada fila los registros encontrados
+                                                       //El nombre de ser asi como esta en la tabla de la base de datos
+                person.add(new Persona(result.getString("dui_persona"), result.getString("apellido_persona"), result.getString("nombres_persona")));   
+            }  
+        } catch (SQLException ex) {
+            Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return person; //Independientemente encuentre o no registro retorna al objeto person
     }
     
 }
