@@ -19,6 +19,7 @@ public class Mostrar extends HttpServlet {
         personas = p.consultarRegistros();//Consulta los registros y los almacena en nuevo array llamado personas
         request.getSession().setAttribute("personas", personas); //Asignar valores a la sesion
         request.getRequestDispatcher("mostrartodo.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -7,7 +7,7 @@ import java.util.ArrayList; //Importar la clase Array
 
 public class Persona {
     private String dui;
-    private String apellido;
+    private String apellidos;
     private String nombres;
 
     
@@ -26,11 +26,43 @@ public class Persona {
         }
     }
     
-    public Persona(String dui, String apellido, String nombres){
+    public Persona(String dui, String apellidos, String nombres){
         this.dui = dui;
-        this.apellido = apellido;
+        this.apellidos = apellidos;
         this.nombres = nombres;
     }
+    
+    public boolean insertarDatos(){
+        try {
+            String miQuery = "insert into tb_persona values('" + dui + "', '" + apellidos + "', '" + nombres + "');";
+            int estado = 0;
+            state = cnn.createStatement();
+            estado = state.executeUpdate(miQuery);
+            if(estado == 1){
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+        }     
+    return false;
+    }
+    
+    public ArrayList<Persona>consultarRegistros(){
+        ArrayList<Persona> person = new ArrayList(); //Crear el array de almacenamiento tipo Persona
+        try {
+            String miQuery = "select * from tb_persona;"; //Definir la consulta
+            state = cnn.createStatement();//Crear el "boton" para la consulta
+            result = state.executeQuery(miQuery);//Ejecutar la consulta
+            while(result.next()){//Recorre todo el resutSet y almacena en cada fila los registros encontrados
+                                                       //El nombre de ser asi como esta en la tabla de la base de datos
+                person.add(new Persona(result.getString("dui_persona"), result.getString("apellidos_persona"), result.getString("nombre_persona")));   
+            }  
+        } catch (SQLException ex) {
+            Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return person; //Independientemente encuentre o no registro retorna al objeto person
+    }
+    
     
     
     
@@ -51,15 +83,15 @@ public class Persona {
     /**
      * @return the apellido
      */
-    public String getApellido() {
-        return apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
     /**
      * @param apellido the apellido to set
      */
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellidos(String apellido) {
+        this.apellidos = apellido;
     }
 
     /**
@@ -76,36 +108,6 @@ public class Persona {
         this.nombres = nombres;
     }
     
-    public boolean insertarDatos(){
-        try {
-            String miQuery = "insert into tb_persona values('" + dui + "', '" + apellido + "', '" + nombres + "');";
-            int estado = 0;
-            state = cnn.createStatement();
-            estado = state.executeUpdate(miQuery);
-            if(estado == 1){
-                return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
-        }     
-    return false;
-    }
-    
-    public ArrayList<Persona> consultarRegistros(){
-        ArrayList<Persona> person = new ArrayList(); //Crear el array de almacenamiento tipo Persona
-        try {
-            String miQuery = "select * from tb_persona;"; //Definir la consulta
-            state = cnn.createStatement();//Crear el "boton" para la consulta
-            result = state.executeQuery(miQuery);//Ejecutar la consulta
-            while(result.next()){//Recorre todo el resutSet y almacena en cada fila los registros encontrados
-                                                       //El nombre de ser asi como esta en la tabla de la base de datos
-                person.add(new Persona(result.getString("dui_persona"), result.getString("apellidos_persona"), result.getString("nombre_persona")));   
-            }  
-        } catch (SQLException ex) {
-            Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return person; //Independientemente encuentre o no registro retorna al objeto person
-    }
     
 }
 

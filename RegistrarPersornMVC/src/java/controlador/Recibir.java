@@ -66,7 +66,7 @@ public class Recibir extends HttpServlet {
         
         Persona person = new Persona(); //Al crear este objeto automaticamente se conecta a la BD
         person.setDui(dui);
-        person.setApellido(apellidos);
+        person.setApellidos(apellidos);
         person.setNombres(nombres);
         
         if(person.insertarDatos() == true){//Recuerda que era booleana
