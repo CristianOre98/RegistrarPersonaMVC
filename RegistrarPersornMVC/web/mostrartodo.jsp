@@ -13,6 +13,7 @@
       
 
         <a class="btn btn-primary" href="mostrar.do">mostrar</a> <hr>
+        <a href="./views/agregar.jsp">registrar</a>
       
             <table border="1" >
 		<tr>
@@ -28,8 +29,8 @@
 				<td><c:out value="${listaTotal.apellidos}"/></td>
 				<td><c:out value="${listaTotal.nombres}"/></td>
 				
-				<td><a href="adminArticulo?action=showedit&id=<c:out value="${articulo.id}" />">Editar</a></td>
-				<td><a href="adminArticulo?action=eliminar&id=<c:out value="${articulo.id}"/>">Eliminar</a> </td>				
+				<td><a href="modificar.jsp?dui=<c:out value="${listaTotal.dui}"/>">Editar</a></td>
+				<td><a href="Eliminar?elimina&==<c:out value="${listaTotal.dui}"/>">Eliminar</a> </td>				
 			</tr>
 		</c:forEach>
 	</table>

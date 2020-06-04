@@ -1,25 +1,52 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Persona;
 
-public class Mostrar extends HttpServlet {
+/**
+ *
+ * @author Josue
+ */
+@WebServlet(name = "Modificar", urlPatterns = {"/Modificar"})
+public class Modificar extends HttpServlet {
 
-     
-   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Persona p = new Persona(); //Conectar a la BD
-        ArrayList<Persona> personas = new ArrayList();
-        personas = p.consultarRegistros();//Consulta los registros y los almacena en nuevo array llamado personas
-        request.getSession().setAttribute("personas", personas); //Asignar valores a la sesion
-        request.getRequestDispatcher("mostrartodo.jsp").forward(request, response);
+         PrintWriter out = response.getWriter();
+         Persona p = new Persona();
+           //mostrar los registros
+          
         
+         if (request.getParameter("actualizar")!=null) {
+             
+             
+                p.modificar(request.getParameter("txtNombres"),request.getParameter("txtApellidos"),request.getParameter("txtDui"));
+             response.sendRedirect("modificar.jsp?mag=Registro actualizado¡!");
+
+            
+        }else{
+                 response.sendRedirect("modificar.jsp?mag=ERROR al actualizado¡!");
+             }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
