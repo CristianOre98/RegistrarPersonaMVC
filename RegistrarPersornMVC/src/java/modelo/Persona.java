@@ -14,6 +14,7 @@ public class Persona {
     Connection cnn;
     Statement state;
     ResultSet result;
+    PreparedStatement ps;
     
     public Persona() {
         try {
@@ -64,7 +65,18 @@ public class Persona {
     }
     
     
-    
+     public void modificar(String nom, String ape, String dni) {
+        
+          try {
+
+           
+            ps = cnn.prepareStatement("UPDATE tb_persona SET apellidos_persona='"+ape+"', nombre_persona='"+nom+"' WHERE dui_persona='"+dni+"'");
+            ps.executeUpdate();
+         } catch (Exception ex) {
+             System.out.println("ERROR"+ex.getMessage());
+         }
+          
+      }
     
     /**
      * @return the dui
