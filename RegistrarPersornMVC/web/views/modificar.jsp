@@ -19,7 +19,7 @@
 		<table>
 			<tr>
 				<td><label>DUI</label></td>
-				<td><input type="text" name="txtDui" value="<%=request.getParameter("dui")%>" ></td>
+				<td><input type="text" name="txtDui" value="<%=request.getParameter("dui")%>" required readonly></td>
 			</tr>
 			
 			<tr>

@@ -45,7 +45,7 @@ public class Modificar extends HttpServlet {
 
             
         }else{
-                 response.sendRedirect("modificar.jsp?mag=ERROR al actualizado¡!");
+                 response.sendRedirect("views/modificar.jsp?mag=ERROR al actualizado¡!");
              }
     }
 

@@ -70,9 +70,9 @@ public class Recibir extends HttpServlet {
         person.setNombres(nombres);
         
         if(person.insertarDatos() == true){//Recuerda que era booleana
-            request.getRequestDispatcher("exito.jsp").forward(request, response);
+            request.getRequestDispatcher("views/exito.jsp").forward(request, response);
         }else{
-             request.getRequestDispatcher("noexito.jsp").forward(request, response);
+             request.getRequestDispatcher("views/noexito.jsp").forward(request, response);
         }
     }
 

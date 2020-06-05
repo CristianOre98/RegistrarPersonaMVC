@@ -18,7 +18,7 @@ public class Mostrar extends HttpServlet {
         ArrayList<Persona> personas = new ArrayList();
         personas = p.consultarRegistros();//Consulta los registros y los almacena en nuevo array llamado personas
         request.getSession().setAttribute("personas", personas); //Asignar valores a la sesion
-        request.getRequestDispatcher("mostrartodo.jsp").forward(request, response);
+        request.getRequestDispatcher("views/mostrartodo.jsp").forward(request, response);
         
     }
 

@@ -8,6 +8,7 @@
     </head>
     <body>
         <a href="mostrartodo.jsp">mostrar</a>
+        <br>
         <%=request.getParameter("mag")%>
         <h1>Eliminar</h1>
 
@@ -15,7 +16,7 @@
             DUI:<input type="text" name="txtDui" value="" /> 
             <br>
            
-            <input type="Submit" value="Registrar Nueva Persona" name="delete" />
+            <input type="Submit" value="Borrar" name="delete" />
         </form>
     </body>
 </html>

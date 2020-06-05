@@ -19,7 +19,7 @@ public class Persona {
     public Persona() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_recurso_humano?zeroDateTimeBehavior=convertToNull", "root", "");
+            cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_recurso_humano?zeroDateTimeBehavior=convertToNull", "root", "");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
