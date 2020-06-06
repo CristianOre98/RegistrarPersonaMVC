@@ -31,7 +31,7 @@
       </nav>
 <body>
       <div class="container-fluid ">
-          
+           <div class="row">
           <div class="col-12">
           <br>
           <form action="recibir.do" method="post" >
@@ -54,7 +54,7 @@
         
        
       </div>
-      
+           </div>
     </div>
    
  

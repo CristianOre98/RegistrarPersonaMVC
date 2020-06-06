@@ -29,6 +29,7 @@
     
     
       <div class="container-fluid ">
+           <div class="row">
           <div class="col-10 mx-auto">
                <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
         
@@ -46,8 +47,8 @@
           <thead class="thead-dark">
             <tr>
               <th scope="col">DUI</th>
-              <th scope="col">APELLIDOS</th>
               <th scope="col">NOMBRES</th>
+              <th scope="col">APELLIDOS</th>
               <th colspan=2 scope="col">ACCIONES</th>
             </tr>
           </thead>
@@ -55,16 +56,15 @@
            <c:forEach var="listaTotal" items="${sessionScope.personas}">
 			<tr>
 				<td><c:out value="${listaTotal.dui}"/></td>
-				<td><c:out value="${listaTotal.apellidos}"/></td>
 				<td><c:out value="${listaTotal.nombres}"/></td>
-				
-                                <td><a class="btn btn-primary" href="modificar.jsp?dui=<c:out value="${listaTotal.dui}"/>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
-                                <td><a class="btn btn-danger" href="eliminar.jsp?dui=<c:out value="${listaTotal.dui}"/>"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a> </td>				
+				<td><c:out value="${listaTotal.apellidos}"/></td>
+                                <td><a class="btn btn-primary" href="modificar_DJ_CV.jsp?dui=<c:out value="${listaTotal.dui}"/>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
+                                <td><a class="btn btn-danger" href="eliminar_DJ_CV.jsp?dui=<c:out value="${listaTotal.dui}"/>"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a> </td>				
 			</tr>
 		</c:forEach>
           </tbody>
         </table>
-        
+          </div>
       </div>     
     </div>
   <!-- Bootstrap core JavaScript -->

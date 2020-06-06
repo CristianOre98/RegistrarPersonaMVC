@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import modelo.Persona;
 
 
-@WebServlet(name = "Eliminar", urlPatterns = {"/Eliminar"})
-public class Eliminar extends HttpServlet {
+@WebServlet(name = "Eliminar", urlPatterns = {"/Eliminar_DJ_CV"})
+public class Eliminar_DJ_CV extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -33,7 +33,7 @@ public class Eliminar extends HttpServlet {
                
              p.eliminar(dui);
              
-             response.sendRedirect("eliminar.jsp?mag=Registro eliminado¡!");
+             response.sendRedirect("eliminar_DJ_CV.jsp?mag=Registro eliminado¡!");
             
         }
     }
@@ -53,7 +53,7 @@ public class Eliminar extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Eliminar.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Eliminar_DJ_CV.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -71,7 +71,7 @@ public class Eliminar extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Eliminar.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Eliminar_DJ_CV.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

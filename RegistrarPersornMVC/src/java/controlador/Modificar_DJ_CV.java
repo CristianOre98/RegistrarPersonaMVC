@@ -18,8 +18,8 @@ import modelo.Persona;
  *
  * @author Josue
  */
-@WebServlet(name = "Modificar", urlPatterns = {"/Modificar"})
-public class Modificar extends HttpServlet {
+@WebServlet(name = "Modificar", urlPatterns = {"/Modificar_DJ_CV"})
+public class Modificar_DJ_CV extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +38,12 @@ public class Modificar extends HttpServlet {
           
         
          if (request.getParameter("actualizar")!=null) {
+             String DJ_CV_dui = request.getParameter("txtDui");
+             String DJ_CV_nom = request.getParameter("txtNombres");
+             String DJ_CV_ape = request.getParameter("txtApellidos");
              
-             
-                p.modificar(request.getParameter("txtNombres"),request.getParameter("txtApellidos"),request.getParameter("txtDui"));
-             response.sendRedirect("modificar.jsp?mag=Registro actualizado¡!");
+                p.modificar(DJ_CV_ape,DJ_CV_nom,DJ_CV_dui);
+             response.sendRedirect("modificar_DJ_CV.jsp?mag=Registro actualizado¡!");
 
             
         }else{

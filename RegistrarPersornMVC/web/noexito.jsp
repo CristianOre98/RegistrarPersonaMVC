@@ -1,11 +1,39 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Crud java</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- font-awesome-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+
+</head>
     <body>
-        <h1>Error al Guardar Registro</h1>
-    </body>
-</html>
+        <div class="container-fluid bg-dark">
+            <div class="row">
+                <div class="col-12 ">
+                    <h1 class="text-center text-success"><i class="fa fa-frown-o fa-3x" aria-hidden="true"> Error al Guardar Registro!</i></h1>
+                   
+                </div>
+            </div>
+        </div>
+        
+    
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html

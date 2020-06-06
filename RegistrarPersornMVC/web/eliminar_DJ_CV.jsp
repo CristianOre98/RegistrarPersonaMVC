@@ -33,13 +33,13 @@
       </nav>
 <body>
       <div class="container-fluid ">
-          
+           <div class="row">
           <div class="col-12">
           <br>
           <h1 class="text-center">Eliminar</h1>
           <h3 class="text-center text-success" ><%=request.getParameter("mag")%></h3> 
      
-           <form action="Eliminar" method="post">
+           <form action="Eliminar_DJ_CV" method="post">
             <div class="form-group col-3 mx-auto">
             <label for="">DUI</label>
             <input type="text" name="txtDui"  class="form-control" value="<%=request.getParameter("dui")%>" readonly >
@@ -51,7 +51,7 @@
         
        
       </div>
-      
+           </div>
     </div>
    
  
