@@ -33,7 +33,7 @@ public class Eliminar extends HttpServlet {
                
              p.eliminar(dui);
              
-             response.sendRedirect("views/eliminar.jsp?mag=Registro eliminado¡!");
+             response.sendRedirect("eliminar.jsp?mag=Registro eliminado¡!");
             
         }
     }

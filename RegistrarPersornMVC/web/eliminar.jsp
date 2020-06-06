@@ -1,3 +1,5 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -24,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav ml-auto mt-2 mt-lg-0 mx-auto">
             <li class="nav-item active">
-                <a class="nav-link " href="mostrartodo.jsp"><b>Mostrar Registros</b></a>
+                <a class="nav-link " href="mostrar.do"><b>Mostrar Registros</b></a>
             </li>
           </ul>
         </div>
@@ -34,21 +36,16 @@
           
           <div class="col-12">
           <br>
-          <form action="recibir.do" method="post" >
+          <h1 class="text-center">Eliminar</h1>
+          <h3 class="text-center text-success" ><%=request.getParameter("mag")%></h3> 
+     
+           <form action="Eliminar" method="post">
             <div class="form-group col-3 mx-auto">
             <label for="">DUI</label>
-            <input type="text" name="txtDui"  class="form-control" placeholder="12345678-9" required >
-           </div>
+            <input type="text" name="txtDui"  class="form-control" value="<%=request.getParameter("dui")%>" readonly >
+            </div>
             <div class="form-group col-3 mx-auto">
-            <label for="">NOMBRES</label>
-            <input type="text" name="txtNombres"  class="form-control" placeholder="Ingrese su nombre" required>
-           </div>
-            <div class="form-group col-3 mx-auto">
-            <label for="">APELLIDOS</label>
-            <input type="text" name="txtApellidos"  class="form-control" placeholder="Ingrese su apellido" required>
-           </div> 
-            <div class="form-group col-3 mx-auto">
-            <button type="Submit" class="btn btn-success "><i class="fa fa-address-card-o fa-lg" aria-hidden="true"> Guardar Registro</i></button>
+                <button type="Submit" name="delete" class="btn btn-danger "><i class="fa fa-address-card-o fa-lg" aria-hidden="true"> Borrar Registro</i></button>
            </div>
         </form>
         

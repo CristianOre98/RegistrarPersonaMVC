@@ -18,7 +18,9 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
- 
+ <!-- font-awesome-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+
   
 
 </head>
@@ -33,29 +35,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0 mx-auto">
             <li class="nav-item active">
-                <a class="nav-link " href="#"><b>Mostrar Registros</b> <span class="sr-only">(current)</span></a>
+                <a class="nav-link " href="index.jsp"><b>Agregar un nuevo registro</b></a>
             </li>
-            <li class="nav-item  active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            
           </ul>
         </div>
       </nav>
           <br>
-          <a href="mostrar.do" class="btn btn-success m-2">Mostrar</a>
+          <a href="mostrar.do" class="btn btn-success m-2">Mostrar todos los registros</a>
         <table class="table">
           <thead class="thead-dark">
             <tr>
               <th scope="col">DUI</th>
-              <th scope="col">APELLIDO</th>
-              <th scope="col">NOMBRE</th>
+              <th scope="col">APELLIDOS</th>
+              <th scope="col">NOMBRES</th>
               <th colspan=2 scope="col">ACCIONES</th>
             </tr>
           </thead>
@@ -66,8 +58,8 @@
 				<td><c:out value="${listaTotal.apellidos}"/></td>
 				<td><c:out value="${listaTotal.nombres}"/></td>
 				
-				<td><a href="modificar.jsp?dui=<c:out value="${listaTotal.dui}"/>">Editar</a></td>
-				<td><a href="eliminar.jsp?dui==<c:out value="${listaTotal.dui}"/>">Eliminar</a> </td>				
+                                <td><a class="btn btn-primary" href="modificar.jsp?dui=<c:out value="${listaTotal.dui}"/>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
+                                <td><a class="btn btn-danger" href="eliminar.jsp?dui=<c:out value="${listaTotal.dui}"/>"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a> </td>				
 			</tr>
 		</c:forEach>
           </tbody>
